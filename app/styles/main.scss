@@ -1,0 +1,69 @@
+$iconSpritePath: '/images/glyphicons-halflings.png';
+$brickHeight: 200px;
+
+@import 'sass-bootstrap/lib/bootstrap';
+@import "compass";
+
+$scaffoldPadding: 20px 0;
+$jumboFontSize: 50px;
+
+@mixin zIndex($index){
+	z-index: $index;
+	position: relative;
+}
+
+/*scaffolding*/
+.footer{
+	padding: $scaffoldPadding ;
+	@include background-image(linear-gradient($grayLighter, $white)); 
+}
+
+.masthead{
+	@include background-image(linear-gradient($white, $grayLighter)); 
+}
+
+.main-content{
+	padding: $scaffoldPadding;
+	@include zIndex(1);
+	@include single-box-shadow($blur:20px);
+}
+
+/* modules */
+.thumbnail{
+	img{
+		width: 100%;
+		height: $brickHeight;
+	}
+	/*1px less so that zoom doesn't force-wrap in webkit*/
+	> li{
+		margin-left:$gridGutterWidth - 1;
+	}
+}
+
+.nav-pills{
+	margin: $paddingLarge;
+}
+
+.jumbotron{
+	text-align:center;
+	h1{
+		font-size: $baseFontSize * 5;
+		line-height: 1;
+	}
+	.lead{
+		font-size: $baseFontSize * 2;
+	}
+}
+
+.carousel {
+
+	@include single-box-shadow();
+}
+
+// nav pills
+.nav-pills > .active > a,
+.nav-pills > .active > a:hover,
+.nav-pills > .active > a:focus {
+  color: $white;
+  background-color: $grayLight;
+}

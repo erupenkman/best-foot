@@ -1,0 +1,14 @@
+{
+  "name": "yeoman",
+  "version": "0.0.0",
+  "dependencies": {
+    "sass-bootstrap": "~2.3.0",
+    "jquery": "~1.9.0",
+    "underscore": "~1.4.3",
+    "backbone": "~1.0.0",
+    "modernizr": "~2.6.2",
+	"masonry": "~3.1.2",
+	"imagesloaded" : "~3.0.4"
+  },
+  "devDependencies": {}
+}
