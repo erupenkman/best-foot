@@ -30,6 +30,11 @@ module.exports = function (grunt) {
             options: {
                 nospawn: true
             },
+			//can only nest one level deep 
+			dev: {
+				files: ['<%= yeoman.app %>/**/*.*'],
+				tasks: ['coffee:dev', 'compass:dev', 'copy:dev']
+			},
             coffee: {
                 files: ['<%= yeoman.app %>/scripts/{,*/}*.coffee'],
                 tasks: ['coffee:dist']
@@ -52,12 +57,6 @@ module.exports = function (grunt) {
                     '{.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js',
                     '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp}'
                 ]
-            },
-            jst: {
-                files: [
-                    '<%= yeoman.app %>/scripts/templates/*.ejs'
-                ],
-                tasks: ['jst']
             }
         },
         connect: {
@@ -138,6 +137,15 @@ module.exports = function (grunt) {
                     ext: '.js'
                 }]
             },
+			dev: {
+				files: [{
+                    expand: true,
+                    cwd: '<%= yeoman.app %>/scripts',
+                    src: '{,*/}*.coffee',
+                    dest: 'dev/scripts',
+                    ext: '.js'
+				}]
+			},
             test: {
                 files: [{
                     expand: true,
@@ -158,6 +166,11 @@ module.exports = function (grunt) {
                 importPath: '<%= yeoman.app %>/bower_components',
                 relativeAssets: true
             },
+			dev: {
+				options: {
+					cssDir: 'dev/styles'
+				}
+			},
             dist: {},
             server: {
                 options: {
@@ -226,6 +239,20 @@ module.exports = function (grunt) {
             }
         },
         copy: {
+			dev: {
+				files: [{
+                    expand: true,
+                    dot: true,
+                    cwd: '<%= yeoman.app %>',
+                    dest: 'dev',
+                    src: [
+                        '*.{ico,html,txt}',
+                        '.htaccess',
+                        'images/{,*/}*.{webp,gif}',
+						'bower_components/**/*.*'
+                    ]
+				}]
+			},
             dist: {
                 files: [{
                     expand: true,
@@ -245,13 +272,6 @@ module.exports = function (grunt) {
                 rjsConfig: '<%= yeoman.app %>/scripts/main.js'
             }
         },
-        jst: {
-            compile: {
-                files: {
-                    '.tmp/scripts/templates.js': ['<%= yeoman.app %>/scripts/templates/*.ejs']
-                }
-            }
-        },
         rev: {
             dist: {
                 files: {
@@ -266,10 +286,12 @@ module.exports = function (grunt) {
         }
     });
 
-    grunt.registerTask('createDefaultTemplate', function () {
-        grunt.file.write('.tmp/scripts/templates.js', 'this.JST = this.JST || {};');
-    });
-
+	grunt.registerTask('watch-dev', function(){
+		grunt.task.run([
+			'watch:dev'
+		]);	
+	});
+	
     grunt.registerTask('server', function (target) {
         if (target === 'dist') {
             return grunt.task.run(['build', 'open', 'connect:dist:keepalive']);
@@ -277,8 +299,6 @@ module.exports = function (grunt) {
             return grunt.task.run([
                 'clean:server',
                 'coffee',
-                'createDefaultTemplate',
-                'jst',
                 'compass:server',
                 'connect:test:keepalive'
             ]);
@@ -287,8 +307,6 @@ module.exports = function (grunt) {
         grunt.task.run([
             'clean:server',
             'coffee:dist',
-            'createDefaultTemplate',
-            'jst',
             'compass:server',
             'connect:livereload',
             'open',
@@ -299,8 +317,6 @@ module.exports = function (grunt) {
     grunt.registerTask('test', [
         'clean:server',
         'coffee',
-        'createDefaultTemplate',
-        'jst',
         'compass',
         'connect:test',
         'mocha'
@@ -309,8 +325,6 @@ module.exports = function (grunt) {
     grunt.registerTask('build', [
         'clean:dist',
         'coffee',
-        'createDefaultTemplate',
-        'jst',
         'compass:dist',
         'useminPrepare',
         'imagemin',
