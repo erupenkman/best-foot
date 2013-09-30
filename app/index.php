@@ -3,15 +3,17 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
+    <head> 
+		<?php get_header(); ?>
+		<?php get_footer(); ?>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-        <link rel="stylesheet" href="styles/main.css">
-        <!-- build:js scripts/vendor/modernizr.js -->
+        <link rel="stylesheet" href="style.css">
+        <!-- build:js scripts/vendor/modernizr.js --> 
         <script src="bower_components/modernizr/modernizr.js"></script>
         <!-- endbuild -->
     </head>
@@ -70,12 +72,6 @@
 				</div>
 				
 				<hr/>
-				
-				
-				
-				
-				
-				
 				
 				<ul id="portfoio-masonry" class="thumbnails">
 					<li  class="span4">
@@ -202,7 +198,6 @@
 
         <!-- build:js({.tmp,app}) scripts/main.js -->
         <script src="scripts/main.js"></script>
-        <script src="scripts/templates.js"></script>
         <!-- endbuild -->
 </body>
 </html>

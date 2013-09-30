@@ -21,7 +21,8 @@ module.exports = function (grunt) {
     // configurable paths
     var yeomanConfig = {
         app: 'app',
-        dist: 'dist'
+        dist: 'dist',
+		dev: '../best-foot-dev'
     };
 
     grunt.initConfig({
@@ -142,7 +143,7 @@ module.exports = function (grunt) {
                     expand: true,
                     cwd: '<%= yeoman.app %>/scripts',
                     src: '{,*/}*.coffee',
-                    dest: 'dev/scripts',
+                    dest: '<%= yeoman.dev %>/scripts',
                     ext: '.js'
 				}]
 			},
@@ -168,7 +169,7 @@ module.exports = function (grunt) {
             },
 			dev: {
 				options: {
-					cssDir: 'dev/styles'
+					cssDir: '<%= yeoman.dev %>'
 				}
 			},
             dist: {},
@@ -244,9 +245,9 @@ module.exports = function (grunt) {
                     expand: true,
                     dot: true,
                     cwd: '<%= yeoman.app %>',
-                    dest: 'dev',
+                    dest: '<%= yeoman.dev %>',
                     src: [
-                        '*.{ico,html,txt}',
+                        '*.{ico,html,txt,php}',
                         '.htaccess',
                         'images/{,*/}*.{webp,gif}',
 						'bower_components/**/*.*'
@@ -289,7 +290,7 @@ module.exports = function (grunt) {
 	grunt.registerTask('watch-dev', function(){
 		grunt.task.run([
 			'watch:dev'
-		]);	
+		]);
 	});
 	
     grunt.registerTask('server', function (target) {
@@ -338,8 +339,6 @@ module.exports = function (grunt) {
     ]);
 
     grunt.registerTask('default', [
-        'jshint',
-        'test',
-        'build'
+        'watch-dev'
     ]);
 };

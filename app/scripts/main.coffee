@@ -11,8 +11,6 @@ window.yeoman =
 				columnWidth: 1
 				itemSelector: 'li'
 			)
-				
-
 $ ->
 	'use strict'
 	yeoman.init();

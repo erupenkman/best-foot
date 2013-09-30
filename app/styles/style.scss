@@ -4,7 +4,7 @@ $brickHeight: 200px;
 @import 'sass-bootstrap/lib/bootstrap';
 @import "compass";
 
-$scaffoldPadding: 20px 0;
+$scaffoldPadding: 20px 0; 
 $jumboFontSize: 50px;
 
 @mixin zIndex($index){
