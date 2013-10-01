@@ -14,7 +14,7 @@
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <link rel="stylesheet" href="style.css">
         <!-- build:js scripts/vendor/modernizr.js --> 
-        <script src="bower_components/modernizr/modernizr.js"></script>
+        <script src="<%=themeRoot%>/bower_components/modernizr/modernizr.js"></script>
         <!-- endbuild -->
     </head>
     <body>
@@ -201,7 +201,7 @@
 			<script src="<%=themeRoot%>/scripts/collections/post.js"></script>
 			<script src="<%=themeRoot%>/scripts/routes/post.js"></script>
 			<script src="<%=themeRoot%>/scripts/views/portfolio.js"></script>
-			<script src="<%=themeRoot%>/scripts/templates/portfolio.js"></script>
+			<script src="<%=themeRoot%>/scripts/templates/portfolio.jst"></script>
 			<script src="<%=themeRoot%>/scripts/main.js"></script>
         <!-- endbuild -->
 </body>

@@ -1,4 +1,6 @@
 'use strict';
+window.bestFootTheme = window.bestFootTheme ? {}
+window.bestFootTheme.Collections = window.bestFootTheme.Collections ? {}
 
-class bestFootTheme.Collections.PostCollection extends Backbone.Collection
+class window.bestFootTheme.Collections.PostCollection extends Backbone.Collection
   model: bestFootTheme.Models.PostModel

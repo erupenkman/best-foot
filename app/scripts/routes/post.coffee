@@ -1,3 +1,4 @@
 'use strict';
-
-class bestFootTheme.Routers.PostRouter extends Backbone.Router
+window.bestFootTheme = window.bestFootTheme ? {}
+window.bestFootTheme.Routers = window.bestFootTheme.Routers ? {}
+class window.bestFootTheme.Routers.PostRouter extends Backbone.Router

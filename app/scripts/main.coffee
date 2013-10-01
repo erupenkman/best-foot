@@ -1,16 +1,14 @@
-window.yeoman =
-	Models: {}
-	Collections: {}
-	Views: {}
-	Routers: {}
-	init: ->
-		'use strict'
-		$('#portfolio-masonry').imagesLoaded -> 
-			console.log('hey')
-			$('#portfoio-masonry').masonry(
-				columnWidth: 1
-				itemSelector: 'li'
-			)
+bestFootTheme = window.bestFootTheme ? {}
+bestFootTheme.init = ()->
+	'use strict'
+	postRouter = new bestFootTheme.Routers.PostRouter();
+	Backbone.history.start();
+	$('#portfolio-masonry').imagesLoaded -> 
+		console.log('hey')
+		$('#portfoio-masonry').masonry(
+			columnWidth: 1
+			itemSelector: 'li'
+		)
 $ ->
 	'use strict'
-	yeoman.init();
+	bestFootTheme.init();
