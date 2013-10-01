@@ -27,6 +27,18 @@ module.exports = function (grunt) {
 
     grunt.initConfig({
         yeoman: yeomanConfig,
+		template: {
+			options: {
+				data: {
+					themeRoot : 'wp-content/themes/best-foot-dev/'
+				}
+			},
+			dev: {
+				files: {
+					'<%= yeoman.dev %>/index.php': '<%= yeoman.app %>/index.php'
+				}
+			}
+		},
         watch: {
             options: {
                 nospawn: true
@@ -34,7 +46,7 @@ module.exports = function (grunt) {
 			//can only nest one level deep 
 			dev: {
 				files: ['<%= yeoman.app %>/**/*.*'],
-				tasks: ['coffee:dev', 'compass:dev', 'copy:dev']
+				tasks: ['template:dev','coffee:dev', 'compass:dev', 'copy:dev']
 			},
             coffee: {
                 files: ['<%= yeoman.app %>/scripts/{,*/}*.coffee'],
@@ -247,7 +259,7 @@ module.exports = function (grunt) {
                     cwd: '<%= yeoman.app %>',
                     dest: '<%= yeoman.dev %>',
                     src: [
-                        '*.{ico,html,txt,php}',
+                        '*.{ico,html,txt}',
                         '.htaccess',
                         'images/{,*/}*.{webp,gif}',
 						'bower_components/**/*.*'
@@ -286,9 +298,14 @@ module.exports = function (grunt) {
             }
         }
     });
-
+	grunt.loadNpmTasks('grunt-template');
+	
 	grunt.registerTask('watch-dev', function(){
 		grunt.task.run([
+			'coffee:dev', 
+			'compass:dev', 
+			'copy:dev',
+			'template:dev',
 			'watch:dev'
 		]);
 	});

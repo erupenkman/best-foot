@@ -158,46 +158,51 @@
         </script>
 
         <!-- build:js scripts/vendor.js -->
-        <script src="bower_components/jquery/jquery.js"></script>
-        <script src="bower_components/underscore/underscore.js"></script>
-        <script src="bower_components/backbone/backbone.js"></script>
+        <script src="<%=themeRoot%>/bower_components/jquery/jquery.js"></script>
+        <script src="<%=themeRoot%>/bower_components/underscore/underscore.js"></script>
+        <script src="<%=themeRoot%>/bower_components/backbone/backbone.js"></script>
         <!-- endbuild -->
 
         <!-- build:js scripts/plugins.js -->
-        <script src="bower_components/sass-bootstrap/js/bootstrap-affix.js"></script>
-        <script src="bower_components/sass-bootstrap/js/bootstrap-alert.js"></script>
-        <script src="bower_components/sass-bootstrap/js/bootstrap-dropdown.js"></script>
-        <script src="bower_components/sass-bootstrap/js/bootstrap-tooltip.js"></script>
-        <script src="bower_components/sass-bootstrap/js/bootstrap-modal.js"></script>
-        <script src="bower_components/sass-bootstrap/js/bootstrap-transition.js"></script>
-        <script src="bower_components/sass-bootstrap/js/bootstrap-button.js"></script>
-        <script src="bower_components/sass-bootstrap/js/bootstrap-popover.js"></script>
-        <script src="bower_components/sass-bootstrap/js/bootstrap-typeahead.js"></script>
-        <script src="bower_components/sass-bootstrap/js/bootstrap-carousel.js"></script>
-        <script src="bower_components/sass-bootstrap/js/bootstrap-scrollspy.js"></script>
-        <script src="bower_components/sass-bootstrap/js/bootstrap-collapse.js"></script>
-        <script src="bower_components/sass-bootstrap/js/bootstrap-tab.js"></script>
+        <script src="<%=themeRoot%>/bower_components/sass-bootstrap/js/bootstrap-affix.js"></script>
+        <script src="<%=themeRoot%>/bower_components/sass-bootstrap/js/bootstrap-alert.js"></script>
+        <script src="<%=themeRoot%>/bower_components/sass-bootstrap/js/bootstrap-dropdown.js"></script>
+        <script src="<%=themeRoot%>/bower_components/sass-bootstrap/js/bootstrap-tooltip.js"></script>
+        <script src="<%=themeRoot%>/bower_components/sass-bootstrap/js/bootstrap-modal.js"></script>
+        <script src="<%=themeRoot%>/bower_components/sass-bootstrap/js/bootstrap-transition.js"></script>
+        <script src="<%=themeRoot%>/bower_components/sass-bootstrap/js/bootstrap-button.js"></script>
+        <script src="<%=themeRoot%>/bower_components/sass-bootstrap/js/bootstrap-popover.js"></script>
+        <script src="<%=themeRoot%>/bower_components/sass-bootstrap/js/bootstrap-typeahead.js"></script>
+        <script src="<%=themeRoot%>/bower_components/sass-bootstrap/js/bootstrap-carousel.js"></script>
+        <script src="<%=themeRoot%>/bower_components/sass-bootstrap/js/bootstrap-scrollspy.js"></script>
+        <script src="<%=themeRoot%>/bower_components/sass-bootstrap/js/bootstrap-collapse.js"></script>
+        <script src="<%=themeRoot%>/bower_components/sass-bootstrap/js/bootstrap-tab.js"></script>
 		
         <!-- endbuild -->
 		
         <!-- build:js scripts/masonry.js -->
-			<script src="bower_components/eventEmitter/EventEmitter.js"></script>
-			<script src="bower_components/eventie/eventie.js"></script>
-			<script src="bower_components/doc-ready/doc-ready.js"></script>
-			<script src="bower_components/get-style-property/get-style-property.js"></script>
-			<script src="bower_components/get-size/get-size.js"></script>
-			<script src="bower_components/jquery-bridget/jquery.bridget.js"></script>
-			<script src="bower_components/matches-selector/matches-selector.js"></script>
-			<script src="bower_components/outlayer/item.js"></script>
-			<script src="bower_components/outlayer/outlayer.js"></script>
+			<script src="<%=themeRoot%>/bower_components/eventEmitter/EventEmitter.js"></script>
+			<script src="<%=themeRoot%>/bower_components/eventie/eventie.js"></script>
+			<script src="<%=themeRoot%>/bower_components/doc-ready/doc-ready.js"></script>
+			<script src="<%=themeRoot%>/bower_components/get-style-property/get-style-property.js"></script>
+			<script src="<%=themeRoot%>/bower_components/get-size/get-size.js"></script>
+			<script src="<%=themeRoot%>/bower_components/jquery-bridget/jquery.bridget.js"></script>
+			<script src="<%=themeRoot%>/bower_components/matches-selector/matches-selector.js"></script>
+			<script src="<%=themeRoot%>/bower_components/outlayer/item.js"></script>
+			<script src="<%=themeRoot%>/bower_components/outlayer/outlayer.js"></script>
 			
-			<script src="bower_components/imagesloaded/imagesloaded.js"></script>
+			<script src="<%=themeRoot%>/bower_components/imagesloaded/imagesloaded.js"></script>
 
-			<script src="bower_components/masonry/masonry.js"></script>
+			<script src="<%=themeRoot%>/bower_components/masonry/masonry.js"></script>
         <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/main.js -->
-        <script src="scripts/main.js"></script>
+			<script src="<%=themeRoot%>/scripts/models/post.js"></script>
+			<script src="<%=themeRoot%>/scripts/collections/post.js"></script>
+			<script src="<%=themeRoot%>/scripts/routes/post.js"></script>
+			<script src="<%=themeRoot%>/scripts/views/portfolio.js"></script>
+			<script src="<%=themeRoot%>/scripts/templates/portfolio.js"></script>
+			<script src="<%=themeRoot%>/scripts/main.js"></script>
         <!-- endbuild -->
 </body>
 </html>
