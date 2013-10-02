@@ -5,7 +5,10 @@ bestFootTheme.init = ()->
 	Backbone.history.start();
 	postCollection = new bestFootTheme.Collections.PostCollection();
 	postCollection.fetch().then ->
-		console.log(postCollection);
+		portfolioView = new bestFootTheme.Views.PortfolioView({
+			collection: postCollection
+		});
+		portfolioView.render();
 	$('#portfolio-masonry').imagesLoaded -> 
 		console.log('hey');
 		$('#portfoio-masonry').masonry(
