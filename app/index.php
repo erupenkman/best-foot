@@ -12,7 +12,6 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-        <link rel="stylesheet" href="style.css">
         <!-- build:js scripts/vendor/modernizr.js --> 
         <script src="<%=themeRoot%>/bower_components/modernizr/modernizr.js"></script>
         <!-- endbuild -->
@@ -72,7 +71,7 @@
 				</div>
 				
 				<hr/>
-				<div id="portfoio-list"></div>
+				<ul id="portfoio-list" class="thumbnails"></ul>
 				
 			</div>
 		</div>
