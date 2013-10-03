@@ -9,12 +9,11 @@ bestFootTheme.init = ()->
 			collection: postCollection
 		});
 		portfolioView.render();
-	$('#portfolio-masonry').imagesLoaded -> 
-		console.log('hey');
-		$('#portfoio-masonry').masonry(
-			columnWidth: 1
-			itemSelector: 'li'
-		)
+		$('#portfoio-list').imagesLoaded -> 
+			$('#portfoio-list').masonry(
+				columnWidth: 1
+				itemSelector: 'li'
+			)
 $ ->
 	'use strict'
 	bestFootTheme.init();

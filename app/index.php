@@ -73,70 +73,6 @@
 				
 				<hr/>
 				<div id="portfoio-list"></div>
-				<ul id="portfoio-masonry" class="thumbnails">
-					<li  class="span4">
-						<a href="#" class="thumbnail">
-							<img src="http://www.placekitten.com/201/100" />
-							<div class="caption">
-								<h3>Thumbnail label</h3>
-								<p>Front-end vortals e-business intuitive bricks-and-clicks reintermediate proactive. Extend utilize killer design web-readiness cross-media e-business drive user-centric e-markets web-readiness widgets</p>
-							</div>
-						</a>
-					</li>
-					<li class="span8">
-						<a href="#" class="thumbnail">
-							<img src="http://www.placekitten.com/302/99"/>
-							<div class="caption">
-								<h3>Thumbnail label</h3>
-								<p>Compelling integrated, models 24/365 cultivate dot-com collaborative communities harness cross-media bleeding-edge Cluetrain blogging</p>
-							</div>
-						</a>
-					</li>
-					<li class="span4">
-						<a href="#" class="thumbnail">
-							<img src="http://www.placekitten.com/205/100"/>
-							<div class="caption">
-								<h3>Thumbnail label</h3>
-								<p>acilitate mesh synthesize; efficient architectures aggregate enable semantic e-commerce facilitate innovative repurpose</p>
-							</div>
-						</a>
-					</li>
-					<li class="span4">
-						<a href="#" class="thumbnail">
-							<img src="http://www.placekitten.com/400/200"/>
-						</a>
-					</li>
-					<li class="span4">
-						<a href="#" class="thumbnail">
-							<img src="http://www.placekitten.com/599/301"/>
-						</a>
-					</li>
-					<li class="span4">
-						<a href="#" class="thumbnail">
-							<img src="http://www.placekitten.com/203/100"/>
-						</a>
-					</li>
-					<li class="span4">
-						<a href="#" class="thumbnail">
-							<img src="http://www.placekitten.com/600/299"/>
-						</a>
-					</li>
-					<li class="span4">
-						<a href="#" class="thumbnail">
-							<img src="http://www.placekitten.com/201/100"/>
-						</a>
-					</li>
-					<li class="span4">
-						<a href="#" class="thumbnail">
-							<img src="http://www.placekitten.com/600/300"/>
-						</a>
-					</li>
-					<li class="span4">
-						<a href="#" class="thumbnail">
-							<img src="http://www.placekitten.com/200/100"/>
-						</a>
-					</li>
-				</ul>
 				
 			</div>
 		</div>
@@ -195,8 +131,18 @@
 			<script src="<%=themeRoot%>/bower_components/masonry/masonry.js"></script>
         <!-- endbuild -->
 		
-		<script type="text/html" id="portfolio-entry">
-			<p>Your content here.</p>{{postContent}}
+		<script type="text/x-template" id="portfolio-entry">
+			{{#.}}
+				<li class="span4">
+					<a href="{{url}}" class="thumbnail">
+						<img src="{{thumbnail.url}}"/>
+						<div class="caption">
+							<h3>{{title}}</h3>
+							<p>{{content}}</p>
+						</div>
+					</a>
+				</li>
+			{{/.}}
 		</script>
         
 		<!-- build:js({.tmp,app}) scripts/main.js -->
